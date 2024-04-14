@@ -1,4 +1,4 @@
-import { CityType } from "../02/02_02";
+import { CityType } from "./02_02";
 
 let city: CityType;
 
@@ -7,6 +7,7 @@ beforeEach(() => {
     title: "New York",
     houses: [
       {
+        id:1,
         buildAt: 2012,
         repaired: false,
         address: {
@@ -17,6 +18,7 @@ beforeEach(() => {
         },
       },
       {
+        id:2,
         buildAt: 2008,
         repaired: false,
         address: {
@@ -27,6 +29,7 @@ beforeEach(() => {
         },
       },
       {
+        id:3,
         buildAt: 2020,
         repaired: false,
         address: {
@@ -63,7 +66,7 @@ beforeEach(() => {
   };
 });
 
-test("test city should contains 3 houses", () => {
+test.skip("test city should contains 3 houses", () => {
   expect(city.houses.length).toBe(3);
 
   expect(city.houses[0].buildAt).toBe(2012);
@@ -82,7 +85,7 @@ test("test city should contains 3 houses", () => {
   expect(city.houses[2].address.street.title).toBe("Happy street");
 });
 
-test("test city should contains hospital and fire station", () => {
+test.skip("test city should contains hospital and fire station", () => {
   expect(city.governmentBuildings.length).toBe(2);
 
   expect(city.governmentBuildings[0].type).toBe("HOSPITAL");

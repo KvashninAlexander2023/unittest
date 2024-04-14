@@ -4,7 +4,7 @@ type TechnologiesType = {
 };
 
 type LocalCityType = {
-  countryTitle: string;
+  title: string;
 };
 
 type AddressType = {
@@ -31,7 +31,7 @@ export const student: StudentType = {
   address: {
     streetTitle: "Surganova 2",
     city: {
-      countryTitle: "Belarus",
+      title: "Belarus",
     },
   },
 

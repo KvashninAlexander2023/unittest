@@ -8,12 +8,13 @@ type AddressType = {
 };
 
 type HousesType = {
+  id: number
   buildAt: number;
   repaired: boolean;
   address: AddressType;
 };
 
-type governmentBuildingsType = {
+export type governmentBuildingsType = {
   type:  "HOSPITAL" | "FIRE-STATION"
   budget: number
   staffCount: number
