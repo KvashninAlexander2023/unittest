@@ -1,4 +1,5 @@
 import { CityType } from "../02-object/02_02";
+import { createMessages, getStreetsTitleGovernmentBuildings, getStreetsTitleOfHous } from "./05-02";
 
 let city: CityType;
 
@@ -13,7 +14,7 @@ beforeEach(() => {
         address: {
           number: 100,
           street: {
-            title: "Write street",
+            title: "White street",
           },
         },
       },
@@ -66,5 +67,45 @@ beforeEach(() => {
   };
 });
 
+test("list of streets of govermants building", () => {
+  let streetsNames = getStreetsTitleGovernmentBuildings(city.governmentBuildings)
+
+  expect(streetsNames.length).toBe(2)
+  expect(streetsNames[0]).toBe('Central Str')
+  expect(streetsNames[1]).toBe("South Str")
+})
+
+
+test("list of streets title", () => {
+  let streetsNames = getStreetsTitleOfHous(city.houses)
+
+  expect(streetsNames.length).toBe(3)
+  expect(streetsNames[0]).toBe('White street')
+  expect(streetsNames[1]).toBe('Happy street')
+  expect(streetsNames[2]).toBe('Happy street')
+ 
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+test("create greeting messanges for streets", () => {
+  let messanges  = createMessages(city.houses)
+
+  expect(messanges.length).toBe(3)
+  expect(messanges[0]).toBe('Hello guys from White street')
+  expect(messanges[1]).toBe('Hello guys from Happy street')
+  expect(messanges[2]).toBe('Hello guys from Happy street')
+ 
+})
 
 // время 16:33 видео map, доделать!!!!!!!!!!!!!!!!

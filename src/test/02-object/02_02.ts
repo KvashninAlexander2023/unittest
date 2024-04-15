@@ -7,7 +7,7 @@ type AddressType = {
   street: StreetType;
 };
 
-type HousesType = {
+export type HousesType = {
   id: number
   buildAt: number;
   repaired: boolean;

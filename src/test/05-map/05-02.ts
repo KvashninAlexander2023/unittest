@@ -1,54 +1,22 @@
-
-export type ManType = {
-  name: string
-  age: number
-}
-
-const people: Array<ManType> =[
-  {name:"Andrew Ivanov", age: 33},
-  {name:"Alexander Ivanov2", age: 24},
-  {name:"Dmitry Ivanov3", age: 18}
-]
-
-
-const dimychTransformator =(man: ManType) => {
-  return (
-  {
-    stack:["css","html","js","tdd","react"],
-    firstName: man.name.split(" ")[0],
-    lastName: man.name.split(" ")[1]
-  })
-}
-
-const devs = [
-  {stack:["css","html","js","tdd","react"], firstName: "Andrew", lastName: "Ivanov"},
-  {stack:["css","html","js","tdd","react"], firstName: "Alexander", lastName: "Ivanov2"},
-  {stack:["css","html","js","tdd","react"], firstName: "Dmitry", lastName: "Ivanov3"}
-]
-
-const dev2 = [
-  dimychTransformator(people[0]),
-  dimychTransformator(people[1]),
-  dimychTransformator(people[2])
-]
-
-const dev3 = people.map(dimychTransformator)
-
-const dev4 = people.map(man => (
-  {
-    stack:["css","html","js","tdd","react"],
-    firstName: man.name.split(" ")[0],
-    lastName: man.name.split(" ")[1]
-  })
-)
-
-
-const messages = people.map(man => `Hello ${man.name.split(" ")[0]}. Welcome to Incubator`)
+import {governmentBuildingsType, HousesType} from "../02-object/02_02"
 
 
 
-export const createGreetingMessages =(people:Array<ManType>) => {
-  
-  return people.map(man => `Hello ${man.name.split(" ")[0]}. Welcome to Incubator`)
+export const getStreetsTitleGovernmentBuildings = (
+  buildings: Array<governmentBuildingsType>) =>{
+      return buildings.map(b => b.address.street.title)
+  }
 
-}
+
+
+
+
+export const getStreetsTitleOfHous = (
+  houses: Array<HousesType>) =>{
+      return houses.map(b => b.address.street.title)
+  }
+
+export const createMessages = (
+  houses: Array<HousesType>) =>{
+      return houses.map(b => `Hello guys from ${b.address.street.title}`)
+  }
